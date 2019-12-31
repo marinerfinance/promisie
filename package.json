@@ -1,5 +1,5 @@
 {
-  "name": "promisie",
+  "name": "@mariner/promisie",
   "version": "2.0.1-alpha.0",
   "description": "helpful add-on functionality for es6 Promises",
   "main": "index.js",
