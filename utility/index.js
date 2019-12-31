@@ -23,6 +23,7 @@ var _map = function (operation, values, concurrency, cb) {
   if (!Array.isArray(values)) cb(new TypeError('ERROR: map can only be called with an Array'));
   cb = (typeof concurrency === 'function') ? concurrency : cb;
   let queue = new QUEUE(operation, concurrency, values);
+  if (!queue || !queue.values || !queue.values.length) cb(null, []);
   return queue.insert(...queue.values)
     .resolve()
     .then(result => cb(null, result))
